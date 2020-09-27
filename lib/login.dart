@@ -14,10 +14,11 @@ class _LoginState extends State<Login> {
   final fire = Firestore.instance;
 String email='';
 String password='';
+String as='';
  Future signIn() async {
    try{
      final result = await auth.signInWithEmailAndPassword(email: email, password: password);
-    return 'success';
+    return result.user.uid;
    }catch(e){
      print(e);
      return null;
@@ -139,6 +140,22 @@ String password='';
                                     hintStyle: TextStyle(color: Colors.grey[600])
                                 ),
                               ),
+                            ),
+                            Container(
+                              padding: EdgeInsets.all(8.0),
+                              child: TextField(
+                                onChanged: (val){
+                                  setState(() {
+                                    as=val;
+                                  });
+                                },
+                                obscureText: true,
+                                decoration: InputDecoration(
+                                    border: InputBorder.none,
+                                    hintText: "As",
+                                    hintStyle: TextStyle(color: Colors.grey[600])
+                                ),
+                              ),
                             )
                           ],
                         ),
@@ -146,9 +163,12 @@ String password='';
                       SizedBox(height: 30,),
                      FadeAnimation(2, RaisedButton(onPressed: () async {
                        String value = await signIn();
-                       if(value=='success'){
-                       print('success');}else{
+                       if(value==null){
                          print('fail');
+
+                       }else{
+                         print('success');
+                         Navigator.pushNamed(context, '/', arguments: {'uid': value,'as':as});
                        }
                      },
                      child: Center(
@@ -176,8 +196,19 @@ String password='';
 //                        ),
 //                      )
                      ),
-                      SizedBox(height: 70,),
-                      FadeAnimation(1.5, Text("Forgot Password?", style: TextStyle(color: Colors.indigo[700]))),
+
+                      SizedBox(height: 20,),
+                      FadeAnimation(2, RaisedButton(onPressed: () async {
+                        Navigator.pushNamed(context, '/register');
+                      },
+                        child: Center(
+                          child: Text("Register", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+                        ),
+                        color: Colors.indigo[900],
+                        textColor: Colors.white,
+                        hoverColor: Colors.indigo[300],
+                      ),
+                      ),
 
                     ],
                   ),

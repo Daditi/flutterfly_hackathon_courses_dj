@@ -28,8 +28,10 @@ class _RegisterState extends State<Register> {
       final result = await auth.createUserWithEmailAndPassword(email: email, password: password);
       final uid =  result.user.uid;
 
-      final user = await fire.collection('student').document(uid).setData({'email':email,'password':password,'fname':fname,'lname':lname,
-        'roll':roll,'std':std,'div':div});
+      final user = await fire.collection('teacher').document(uid).setData({'email':email,'password':password,'fname':fname,'lname':lname
+        ,
+//        'roll':roll,'std':std,'div':div
+      });
       return uid;
     }catch(e){
       print('notttttttttt');
