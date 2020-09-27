@@ -61,7 +61,7 @@ List<dynamic> l=[];
             ),
             SizedBox(height: 8.0),
             Text(
-              'Sakshi',
+              'Aditi',
               style: TextStyle(
                 color: Colors.indigoAccent[600],
                 fontWeight: FontWeight.bold,
@@ -78,7 +78,7 @@ List<dynamic> l=[];
                 ),
                 SizedBox(width: 10.0),
                 Text(
-                  'sak@gmail.com',
+                  'abbd@gmail.com',
                   style: TextStyle(
                     color: Colors.indigoAccent[900],
                     fontSize: 20.0,

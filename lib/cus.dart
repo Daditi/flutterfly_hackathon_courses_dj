@@ -103,12 +103,12 @@ void _onItemTapped(int index) {
       appBar: AppBar(
         
       
-      title: const Text('D3S Teams', style: TextStyle(fontSize: 25.0,),),
+      title: const Text('Flutterfly Teams', style: TextStyle(fontSize: 25.0,),),
       centerTitle: true,
       backgroundColor: Colors.indigo[900],
         actions: <Widget>[
           if (as== 'teacher') Padding(
-              padding: EdgeInsets.only(left:50 ,right: 0.0),
+              padding: EdgeInsets.only(left:0.0 ,right: 0.0),
               child: GestureDetector(
                 onTap: () {
                   Navigator.pushNamed(context, '/chart', arguments: {'uid': val['uid'],'as':as});

@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> {
             ),
             SizedBox(height: 30.0,),
            Padding(
-             padding: const EdgeInsets.only(left: 26.0),
+             padding: const EdgeInsets.only(left: 15.0),
              child: Row(
                children: [
                  Card(
@@ -95,7 +95,7 @@ class _HomePageState extends State<HomePage> {
            ),
            SizedBox(height: 20,),
           Padding(
-             padding: const EdgeInsets.only(left: 26.0),
+             padding: const EdgeInsets.only(left: 15.0),
              child: Row(
                children: [
                  Card(
